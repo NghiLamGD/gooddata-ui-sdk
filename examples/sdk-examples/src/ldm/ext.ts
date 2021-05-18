@@ -1,4 +1,4 @@
-// (C) 2020 GoodData Corporation
+// (C) 2020-2021 GoodData Corporation
 import {
     modifyMeasure,
     newArithmeticMeasure,
@@ -56,7 +56,7 @@ export const numberOfChecks = modifyMeasure(Ldm.NrChecks, (m) =>
     m.localId("numOfChecks").format("#,##0").alias("# Checks").title("Number of Checks"),
 );
 export const FranchiseFees = modifyMeasure(Ldm.$FranchiseFees, (m) =>
-    m.format("#,##0").localId(franchiseFeesLocalId).title("Franchise Fees"),
+    m.format("#,##0").localId(franchiseFeesLocalId).title("Activity rename"),
 );
 export const franchiseFeesAsPercents = modifySimpleMeasure(FranchiseFees, (m) =>
     m.title("Franchise Fees shown in %").ratio(),
