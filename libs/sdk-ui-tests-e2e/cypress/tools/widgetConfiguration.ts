@@ -86,6 +86,16 @@ export class WidgetConfiguration {
         return this;
     }
 
+    getListFilterItem() {
+        const result = [];
+        this.getElement()
+            .find(".s-attribute-filter-by-item")
+            .each(($li) => {
+                return result.push($li.text());
+            });
+        return cy.wrap(result);
+    }
+
     toggleAttributeFilter(attributeName: string) {
         this.getElement()
             .find(".s-viz-filters-panel .s-attribute-filter-by-item")
