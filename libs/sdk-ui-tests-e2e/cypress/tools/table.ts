@@ -42,6 +42,15 @@ export class Table {
         return this.getElement().find(".ag-body-viewport").find(`.s-cell-${rowIndex}-${columnIndex}`);
     }
 
+    getCellValue(row: number, column: number) {
+        return this.getElement().find(`.s-cell-${row}-${column} .s-value`);
+    }
+
+    hasCellValue(row: number, column: number, value: string) {
+        this.getCellValue(row, column).should("have.text", value);
+        return this;
+    }
+
     hasCellWidth(rowIndex: number, columnIndex: number, expectedWidth: number, withTolerance = false) {
         const columnWidth = this.getCell(rowIndex, columnIndex).invoke("outerWidth");
 

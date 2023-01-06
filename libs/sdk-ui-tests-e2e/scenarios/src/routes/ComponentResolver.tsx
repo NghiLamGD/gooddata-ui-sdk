@@ -22,6 +22,7 @@ import { DashboardFilterConfigurationScenario } from "../components/Scenarios/Da
 import { DashboardScenarioTiger } from "../components/Scenarios/Dashboard/DashboardScenarioTiger";
 import { DashboardAttributeFilteringScenario } from "../components/Scenarios/Dashboard/DashboardAttributeFilteringScenario";
 import { DashboardStageNameScenario } from "../components/Scenarios/Dashboard/DashboardStageNameScenario";
+import { DashboardDateFilteringScenario } from "../components/Scenarios/Dashboard/DashboardDateFilteringScenario";
 
 /**
  * Add key here for your new E2E test. Use the key in the map below with the scenario as well as in
@@ -31,6 +32,7 @@ export const SCENARIO_KEYS = {
     DASHBOARD: "dashboard/dashboard",
     DASHBOARD_TIGER: "dashboard/dashboard-tiger",
     DASHBOARD_ATTRIBUTE_FILTERING: "dashboard/attribute-filtering",
+    DASHBOARD_DATE_FILTERING: "dashboard/date-filtering",
     DASHBOARD_FILTERING: "dashboard/filtering",
     DASHBOARD_STAGE_NAME: "dashboard/stage-name",
     IMPLICIT_DRILL_TO_ATTRIBUTE: "dashboard/implicit-drill-to-attribute-url",
@@ -53,6 +55,7 @@ const scenarios = new Map<string, React.ComponentType>([
     [SCENARIO_KEYS.DASHBOARD, DashboardScenario],
     [SCENARIO_KEYS.DASHBOARD_TIGER, DashboardScenarioTiger],
     [SCENARIO_KEYS.DASHBOARD_ATTRIBUTE_FILTERING, DashboardAttributeFilteringScenario],
+    [SCENARIO_KEYS.DASHBOARD_DATE_FILTERING, DashboardDateFilteringScenario],
     [SCENARIO_KEYS.DASHBOARD_STAGE_NAME, DashboardStageNameScenario],
     [SCENARIO_KEYS.IMPLICIT_DRILL_TO_ATTRIBUTE, ImplicitDrillToAttributeUrlScenario],
     [SCENARIO_KEYS.FILTERS_DATE_FILTER, DateFilterScenario],
