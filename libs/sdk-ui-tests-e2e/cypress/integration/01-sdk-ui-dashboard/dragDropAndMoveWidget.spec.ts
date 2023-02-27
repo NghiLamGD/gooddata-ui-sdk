@@ -34,7 +34,7 @@ describe("Insight on dashboard", () => {
 
     it(
         "can add 3 widgets into the same row to create a new section",
-        { tags: ["checklist_integrated_tiger"] },
+        { tags: ["checklist_integrated_bear"] },
         () => {
             new DashboardMenu().toggle().hasOption("Save as new");
             new DashboardHeader().saveAsNew("save after drag drop widgets");
