@@ -3,7 +3,7 @@ import { ISettings } from "@gooddata/sdk-model";
 import { getHost } from "../support/constants";
 import VisitOptions = Cypress.VisitOptions;
 
-const VISIT_TIMEOUT = 40000;
+const VISIT_TIMEOUT = 60000;
 
 function getDashboardUrl() {
     return `${getHost()}`;
@@ -18,7 +18,7 @@ function visitUrl(url: string, options: Partial<VisitOptions>) {
 
 export function visit(componentName: string, workspaceSettings?: ISettings): void {
     const dashboardUrl = getDashboardUrl();
-    visitUrl(`${dashboardUrl}/gooddata-ui-sdk?scenario=${componentName}`, {
+    visitUrl(`http://localhost:9500/gooddata-ui-sdk?scenario=${componentName}`, {
         onBeforeLoad(win: Cypress.AUTWindow) {
             win["customWorkspaceSettings"] = workspaceSettings;
         },

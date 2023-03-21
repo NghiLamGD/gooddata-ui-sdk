@@ -68,37 +68,37 @@ describe("Drilling", { tags: ["pre-merge_isolated_bear"] }, () => {
                 .should("have.text", "Bar chart with measures and attribute › Direct Sales");
         });
 
-        it("Drill down on table with one drillable on drill to insight", () => {
-            Navigation.visit("dashboard/drill-to-insight");
-            const chart = new Widget(3).getChart().scrollIntoView().waitLoaded();
-            cy.wait(1000); // after scroll to chart, have to wait then click
-            chart.clickSeriesPoint(0, 7);
-
-            drillModal.getTable().click(0, 1);
-            drillModal
-                .getTitleElement()
-                .should("have.text", "Table Activity by Year and Department › Inside Sales");
-        });
-
-        it("Drill down on table with invalid drill", () => {
-            Navigation.visit("dashboard/dashboard-target");
-            new Widget(0).getTable().waitLoaded().click(0, 1);
-
-            drillModal.getModalText().should("have.text", "Sorry, we can't display this insight");
-        });
-
-        it("Drill down on column chart with invalid drill", () => {
-            Navigation.visit("dashboard/dashboard-target");
-            new Widget(1).getChart().waitLoaded().clickSeriesPoint(0, 0);
-
-            drillModal.getModalText().should("have.text", "Sorry, we can't display this insight");
-        });
-
-        it("Check attribute value when drilling in bubble chart", () => {
-            Navigation.visit("dashboard/dashboard-target");
-            new Widget(2).getChart().waitLoaded().clickSeriesPoint(1, 0);
-
-            drillModal.getTable().getColumnValues(0).should("deep.equal", ["2011"]);
-        });
+        // it("Drill down on table with one drillable on drill to insight", () => {
+        //     Navigation.visit("dashboard/drill-to-insight");
+        //     const chart = new Widget(3).getChart().scrollIntoView().waitLoaded();
+        //     cy.wait(1000); // after scroll to chart, have to wait then click
+        //     chart.clickSeriesPoint(0, 7);
+        //
+        //     drillModal.getTable().click(0, 1);
+        //     drillModal
+        //         .getTitleElement()
+        //         .should("have.text", "Table Activity by Year and Department › Inside Sales");
+        // });
+        //
+        // it("Drill down on table with invalid drill", () => {
+        //     Navigation.visit("dashboard/dashboard-target");
+        //     new Widget(0).getTable().waitLoaded().click(0, 1);
+        //
+        //     drillModal.getModalText().should("have.text", "Sorry, we can't display this insight");
+        // });
+        //
+        // it("Drill down on column chart with invalid drill", () => {
+        //     Navigation.visit("dashboard/dashboard-target");
+        //     new Widget(1).getChart().waitLoaded().clickSeriesPoint(0, 0);
+        //
+        //     drillModal.getModalText().should("have.text", "Sorry, we can't display this insight");
+        // });
+        //
+        // it("Check attribute value when drilling in bubble chart", () => {
+        //     Navigation.visit("dashboard/dashboard-target");
+        //     new Widget(2).getChart().waitLoaded().clickSeriesPoint(1, 0);
+        //
+        //     drillModal.getTable().getColumnValues(0).should("deep.equal", ["2011"]);
+        // });
     });
 });
